@@ -1,0 +1,640 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package calculadora;
+
+import javax.swing.text.html.HTML;
+
+/**
+ *
+ * @author RTX1030
+ */
+public class divisas extends javax.swing.JFrame {
+
+    private String divisastex = "Estados Unidos-Dolar", in = "", divisastex1 = "Estados Unidos-Dolar";
+    private double cambio, dinero;
+    private boolean punto = true;
+
+    public divisas() {
+
+        initComponents();
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
+
+        panel1 = new javax.swing.JPanel();
+        scroll1 = new javax.swing.JScrollPane();
+        eti1 = new javax.swing.JLabel();
+        scroll2 = new javax.swing.JScrollPane();
+        eti2 = new javax.swing.JLabel();
+        combo1 = new javax.swing.JComboBox<>();
+        combo2 = new javax.swing.JComboBox<>();
+        simbolo1 = new javax.swing.JLabel();
+        simbolo2 = new javax.swing.JLabel();
+        panel2 = new javax.swing.JPanel();
+        boton12 = new javax.swing.JButton();
+        boton6 = new javax.swing.JButton();
+        boton3 = new javax.swing.JButton();
+        boton4 = new javax.swing.JButton();
+        boton7 = new javax.swing.JButton();
+        boton1 = new javax.swing.JButton();
+        boton5 = new javax.swing.JButton();
+        boton8 = new javax.swing.JButton();
+        boton2 = new javax.swing.JButton();
+        boton11 = new javax.swing.JButton();
+        boton10 = new javax.swing.JButton();
+        boton9 = new javax.swing.JButton();
+        boton13 = new javax.swing.JButton();
+        menubarra = new javax.swing.JMenuBar();
+        menu = new javax.swing.JMenu();
+        calculadora = new javax.swing.JMenuItem();
+        divisas = new javax.swing.JMenuItem();
+        exit = new javax.swing.JMenuItem();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.Y_AXIS));
+
+        panel1.setLayout(new java.awt.GridBagLayout());
+
+        eti1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        eti1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        eti1.setText("0");
+        scroll1.setViewportView(eti1);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 353;
+        gridBagConstraints.ipady = 32;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        panel1.add(scroll1, gridBagConstraints);
+
+        eti2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        eti2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        eti2.setText("0");
+        scroll2.setViewportView(eti2);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 353;
+        gridBagConstraints.ipady = 37;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(28, 0, 0, 0);
+        panel1.add(scroll2, gridBagConstraints);
+
+        combo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estados Unidos-Dolar", "Perú-Sol", "Europa-Euro" }));
+        combo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo1ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 118;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 0.5;
+        gridBagConstraints.insets = new java.awt.Insets(6, 12, 0, 0);
+        panel1.add(combo1, gridBagConstraints);
+
+        combo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estados Unidos-Dolar", "Perú-Sol", "Europa-Euro" }));
+        combo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo2ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 117;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 0.5;
+        gridBagConstraints.insets = new java.awt.Insets(6, 12, 33, 0);
+        panel1.add(combo2, gridBagConstraints);
+
+        simbolo1.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        simbolo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        simbolo1.setText("$ ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.weightx = 0.5;
+        gridBagConstraints.weighty = 0.5;
+        panel1.add(simbolo1, gridBagConstraints);
+
+        simbolo2.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        simbolo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        simbolo2.setText("$");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 1;
+        gridBagConstraints.ipady = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.weightx = 0.5;
+        gridBagConstraints.weighty = 0.5;
+        panel1.add(simbolo2, gridBagConstraints);
+
+        getContentPane().add(panel1);
+
+        panel2.setLayout(new java.awt.GridBagLayout());
+
+        boton12.setText("0");
+        boton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton12ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 25;
+        gridBagConstraints.ipady = 25;
+        gridBagConstraints.weightx = 0.5;
+        gridBagConstraints.weighty = 0.5;
+        panel2.add(boton12, gridBagConstraints);
+
+        boton6.setText("4");
+        boton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton6ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 25;
+        gridBagConstraints.ipady = 25;
+        gridBagConstraints.weightx = 0.5;
+        gridBagConstraints.weighty = 0.5;
+        panel2.add(boton6, gridBagConstraints);
+
+        boton3.setText("7");
+        boton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton3ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 25;
+        gridBagConstraints.ipady = 25;
+        gridBagConstraints.weightx = 0.5;
+        gridBagConstraints.weighty = 0.5;
+        panel2.add(boton3, gridBagConstraints);
+
+        boton4.setText("8");
+        boton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton4ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 25;
+        gridBagConstraints.ipady = 25;
+        gridBagConstraints.weightx = 0.5;
+        gridBagConstraints.weighty = 0.5;
+        panel2.add(boton4, gridBagConstraints);
+
+        boton7.setText("5");
+        boton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton7ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 25;
+        gridBagConstraints.ipady = 25;
+        gridBagConstraints.weightx = 0.5;
+        gridBagConstraints.weighty = 0.5;
+        panel2.add(boton7, gridBagConstraints);
+
+        boton1.setText("C");
+        boton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton1ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 25;
+        gridBagConstraints.ipady = 25;
+        gridBagConstraints.weightx = 0.5;
+        gridBagConstraints.weighty = 0.5;
+        panel2.add(boton1, gridBagConstraints);
+
+        boton5.setText("9");
+        boton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton5ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 25;
+        gridBagConstraints.ipady = 25;
+        gridBagConstraints.weightx = 0.5;
+        gridBagConstraints.weighty = 0.5;
+        panel2.add(boton5, gridBagConstraints);
+
+        boton8.setText("6");
+        boton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton8ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 25;
+        gridBagConstraints.ipady = 25;
+        gridBagConstraints.weightx = 0.5;
+        gridBagConstraints.weighty = 0.5;
+        panel2.add(boton8, gridBagConstraints);
+
+        boton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esta.png"))); // NOI18N
+        boton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton2ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 0.5;
+        gridBagConstraints.weighty = 0.5;
+        panel2.add(boton2, gridBagConstraints);
+
+        boton11.setText("3");
+        boton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton11ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 25;
+        gridBagConstraints.ipady = 25;
+        gridBagConstraints.weightx = 0.5;
+        gridBagConstraints.weighty = 0.5;
+        panel2.add(boton11, gridBagConstraints);
+
+        boton10.setText("2");
+        boton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton10ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 25;
+        gridBagConstraints.ipady = 25;
+        gridBagConstraints.weightx = 0.5;
+        gridBagConstraints.weighty = 0.5;
+        panel2.add(boton10, gridBagConstraints);
+
+        boton9.setText("1");
+        boton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton9ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 25;
+        gridBagConstraints.ipady = 25;
+        gridBagConstraints.weightx = 0.5;
+        gridBagConstraints.weighty = 0.5;
+        panel2.add(boton9, gridBagConstraints);
+
+        boton13.setText(".");
+        boton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton13ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 25;
+        gridBagConstraints.ipady = 25;
+        gridBagConstraints.weightx = 0.5;
+        gridBagConstraints.weighty = 0.5;
+        panel2.add(boton13, gridBagConstraints);
+
+        getContentPane().add(panel2);
+
+        menu.setText("File");
+
+        calculadora.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        calculadora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/calcula-cientif-casio-fx-350ms-2-1002-default-1.png"))); // NOI18N
+        calculadora.setText("CALCULADORA");
+        calculadora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calculadoraActionPerformed(evt);
+            }
+        });
+        menu.add(calculadora);
+
+        divisas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        divisas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1547066436_609188_1547067038_noticia_normal.png"))); // NOI18N
+        divisas.setText("DIVISAS");
+        divisas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                divisasActionPerformed(evt);
+            }
+        });
+        menu.add(divisas);
+
+        exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esta.png"))); // NOI18N
+        exit.setText("EXIT");
+        menu.add(exit);
+
+        menubarra.add(menu);
+
+        setJMenuBar(menubarra);
+
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>                        
+
+    private void obtenerdinero() {
+        dinero = Double.parseDouble(in);
+        cambiodivisas();
+        dinero *= cambio;
+        eti2.setText(String.format("%.2f", dinero));
+    }
+
+    private void cambiodivisas() {
+        if (divisastex.equals(divisastex1)) {
+            cambio = 1;
+        } else if (divisastex.equals("Estados Unidos-Dolar") && divisastex1.equals("Perú-Sol")) {
+            cambio = 3.89;
+        } else if (divisastex.equals("Estados Unidos-Dolar") && divisastex1.equals("Europa-Euro")) {
+            cambio = 0.82;
+        } else if (divisastex.equals("Perú-Sol") && divisastex1.equals("Estados Unidos-Dolar")) {
+            cambio = 0.26;
+        } else if (divisastex.equals("Perú-Sol") && divisastex1.equals("Europa-Euro")) {
+            cambio = 0.21;
+        } else if (divisastex.equals("Europa-Euro") && divisastex1.equals("Estados Unidos-Dolar")) {
+            cambio = 1.21;
+        } else if (divisastex.equals("Europa-Euro") && divisastex1.equals("Perú-Sol")) {
+            cambio = 4.72;
+        }
+    }
+    private void divisasActionPerformed(java.awt.event.ActionEvent evt) {                                        
+
+    }                                       
+
+    private void calculadoraActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        calculadora cal = new calculadora();
+        cal.setVisible(true);
+        dispose();
+    }                                           
+
+    private void boton2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        int dato = in.length();
+        if (dato > 0) {
+            if (dato == 1) {
+                in = "0";
+                eti1.setText(in);
+            }
+            in = in.substring(0, in.length() - 1);
+            eti1.setText(in);
+        }
+        if (in == "") {
+            eti1.setText("0");
+            punto = true;
+            eti2.setText("0");
+        }
+        if (in != "") {
+            obtenerdinero();
+        }
+    }                                      
+
+    private void combo1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        divisastex = (String) combo1.getSelectedItem();
+        if (divisastex.equals("Estados Unidos-Dolar")) {
+            simbolo1.setText("$");
+
+        } else if (divisastex.equals("Perú-Sol")) {
+            simbolo1.setText("S/");
+
+        } else if (divisastex.equals("Europa-Euro")) {
+            simbolo1.setText("Є");
+
+        }
+        if (in != "") {
+            obtenerdinero();
+        }
+
+    }                                      
+
+    private void combo2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        divisastex1 = (String) combo2.getSelectedItem();
+        if (divisastex1.equals("Estados Unidos-Dolar")) {
+            simbolo2.setText("$");
+
+        } else if (divisastex1.equals("Perú-Sol")) {
+            simbolo2.setText("S/");
+
+        } else if (divisastex1.equals("Europa-Euro")) {
+            simbolo2.setText("Є");
+
+        }
+        if (in != "") {
+            obtenerdinero();
+        }
+    }                                      
+
+    private void boton9ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        in += "1";
+        eti1.setText(in);
+        obtenerdinero();
+    }                                      
+
+    private void boton10ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        in += "2";
+        eti1.setText(in);
+        obtenerdinero();
+    }                                       
+
+    private void boton11ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        in += "3";
+        eti1.setText(in);
+        obtenerdinero();
+    }                                       
+
+    private void boton6ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        in += "4";
+        eti1.setText(in);
+        obtenerdinero();
+    }                                      
+
+    private void boton7ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        in += "5";
+        eti1.setText(in);
+        obtenerdinero();
+    }                                      
+
+    private void boton8ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        in += "6";
+        eti1.setText(in);
+        obtenerdinero();
+    }                                      
+
+    private void boton3ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        in += "7";
+        eti1.setText(in);
+        obtenerdinero();
+    }                                      
+
+    private void boton4ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        in += "8";
+        eti1.setText(in);
+        obtenerdinero();
+    }                                      
+
+    private void boton5ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        in += "9";
+        eti1.setText(in);
+        obtenerdinero();
+    }                                      
+
+    private void boton12ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        if (in != "") {
+            in += "0";
+            eti1.setText(in);
+            obtenerdinero();
+        }
+    }                                       
+
+    private void boton1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        in = "";
+        eti1.setText("0");
+        punto = true;
+    }                                      
+
+    private void boton13ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        if (punto) {
+            if (in == "") {
+                in = "0.";
+                eti1.setText(in);
+            } else {
+                in += ".";
+                eti1.setText(in);
+            }
+        }
+        punto = false;
+    }                                       
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(divisas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(divisas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(divisas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(divisas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new divisas().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton boton1;
+    private javax.swing.JButton boton10;
+    private javax.swing.JButton boton11;
+    private javax.swing.JButton boton12;
+    private javax.swing.JButton boton13;
+    private javax.swing.JButton boton2;
+    private javax.swing.JButton boton3;
+    private javax.swing.JButton boton4;
+    private javax.swing.JButton boton5;
+    private javax.swing.JButton boton6;
+    private javax.swing.JButton boton7;
+    private javax.swing.JButton boton8;
+    private javax.swing.JButton boton9;
+    private javax.swing.JMenuItem calculadora;
+    private javax.swing.JComboBox<String> combo1;
+    private javax.swing.JComboBox<String> combo2;
+    private javax.swing.JMenuItem divisas;
+    private javax.swing.JLabel eti1;
+    private javax.swing.JLabel eti2;
+    private javax.swing.JMenuItem exit;
+    private javax.swing.JMenu menu;
+    private javax.swing.JMenuBar menubarra;
+    private javax.swing.JPanel panel1;
+    private javax.swing.JPanel panel2;
+    private javax.swing.JScrollPane scroll1;
+    private javax.swing.JScrollPane scroll2;
+    private javax.swing.JLabel simbolo1;
+    private javax.swing.JLabel simbolo2;
+    // End of variables declaration                   
+}
