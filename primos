@@ -1,0 +1,255 @@
+package semana12;
+
+import java.util.Scanner;
+
+public class main {
+
+    static Scanner dato = new Scanner(System.in);
+    static int a;
+
+    public static void main(String[] args) {
+
+        escogeropcion();
+        a = dato.nextInt();
+        elecion(a);
+
+    }
+
+    public static void escogeropcion() {
+
+        System.out.println("MENÚ DE OPCIONES:");
+        System.out.println("|=====================================|");
+        System.out.println("|1.MCD DE DOS NÚMEROS ENTEROS         |");
+        System.out.println("|2.DIVISORES DE UN NÚMERO ENTERO      |");
+        System.out.println("|3.FACTORES PRIMOS DE UN NÚMERO ENTERO|");
+        System.out.println("|4.NUMERO PRIMO O NO                  |");
+        System.out.println("|5.NUMEROS AMIGOS                     |");
+        System.out.println("|6.SALIR                              |");
+        System.out.println("|=====================================|");
+        System.out.print("Ingrese su opcion: ");
+    }
+
+    public static void elecion(int a) {
+
+        do {
+            switch (a) {
+                case 1:
+                    mcd();
+                    escogeropcion();
+                    a = dato.nextInt();
+                    break;
+                case 2:
+                    divisores();
+                    escogeropcion();
+                    a = dato.nextInt();
+                    break;
+                case 3:
+                    factoresprimos();
+                    System.out.println("");
+                    escogeropcion();
+                    a = dato.nextInt();
+                    break;
+                case 4:
+                    primos();
+                    escogeropcion();
+                    a = dato.nextInt();
+                    break;
+                case 5:
+                    numerosamigos();
+                    escogeropcion();
+                    a = dato.nextInt();
+                    break;
+                case 6:
+                    System.out.println("Adios ");
+                    break;
+                default:
+                    System.out.println("Numero incorrecto vuelve a intentar");
+                    escogeropcion();
+                    a = dato.nextInt();
+                    break;
+
+            }
+        } while (a != 6);
+    }
+
+    public static void factoresprimos() {
+        long n;
+        
+        System.out.println("Ingrese un número (>1): ");
+        n = dato.nextLong();
+        if (n <= 1) {
+            System.out.printf("Debe ingresar un número mayor que uno%n");
+        } else {
+            descomponer_factores(n);
+        }
+    }
+
+    public static void mcd() {
+
+        int num1, num2, mcd;
+        System.out.println("Ingresa el primer numero entero");
+        num1 = dato.nextInt();
+        System.out.println("Ingresa el segundo numero entero");
+        num2 = dato.nextInt();
+        mcd = calculo(num1, num2);
+        Mostrar(mcd);
+        escogeropcion();
+        a = dato.nextInt();
+        elecion(a);
+    }
+
+    static int calculo(int num1, int num2) {
+        int mcd = 0;
+        while (num1 != num2) {
+            if (num1 > num2) {
+                mcd = num1 = num1 - num2;
+            } else if (num2 > num1) {
+                mcd = num2 = num2 - num1;
+            } else {
+                num2 = num2 - num1;
+            }
+        }
+        return mcd;
+    }
+
+    static void Mostrar(int mcd) {
+
+        System.out.println("El mcd es : " + mcd);
+
+    }
+
+    private static void descomponer_factores(long n) {
+        long productoria = 1;
+        long copia_n = n;
+        long factor_primo = 2;
+        long cant_factores = 0;
+        boolean hay_factores = false;
+        do {
+            long resto = copia_n % factor_primo;
+            if (resto == 0) {
+                copia_n /= factor_primo;
+                productoria *= factor_primo;
+                cant_factores++;
+            } else {
+                if (cant_factores > 0) {
+                    if (hay_factores) {
+                        System.out.printf("x");
+                    } else {
+                        hay_factores = true;
+                    }
+                    if (cant_factores == 1) {
+                        System.out.printf("%d", factor_primo);
+                    } else {
+                        System.out.printf("%d^%d", factor_primo, cant_factores);
+                    }
+                    cant_factores = 0;
+                }
+                factor_primo = siguiente_primo(factor_primo);
+            }
+        } while (productoria != n);
+        if (hay_factores) {
+            System.out.printf("x");
+        }
+        if (cant_factores == 1) {
+            System.out.printf("%d", factor_primo);
+        } else {
+            System.out.printf("%d^%d", factor_primo, cant_factores);
+        }
+    }
+
+    private static long siguiente_primo(long n) {
+        do {
+            n++;
+        } while (!es_primo(n));
+        return n;
+    }
+
+    private static boolean es_primo(long factor_primo) {
+        long a;
+        a = factor_primo - 1;
+        while (a > 1) {
+            if ((factor_primo % a) == 0) {
+                return false;
+            }
+            a--;
+        }
+        return true;
+    }
+
+    private static void numerosamigos() {
+
+        int numero1, nuermo2;
+        System.out.println("Ingrese el primer numero");
+        numero1 = dato.nextInt();
+        System.out.println("Ingrese el segundo numero");
+        nuermo2 = dato.nextInt();
+        if (sumadedivisores(numero1) == nuermo2) {
+            if (sumadedivisores(nuermo2) == numero1) {
+                System.out.println("Felicidades son numeros amigos");
+            } else {
+                System.out.println("No son numeros amigos");
+            }
+        } else {
+            System.out.println("No son numeros amigos");
+        }
+
+    }
+
+    public static int sumadedivisores(int a) {
+        int resto = a - 1;
+        int acumulador = 0;
+        while (resto > 0) {
+            if ((a % resto) == 0) {
+                acumulador += resto;
+
+            }
+            resto--;
+        }
+        return acumulador;
+    }
+
+    private static void divisores() {
+
+        System.out.println("Introduzca un Numero: ");
+        int nm = dato.nextInt();
+        calculo(nm);
+    }
+
+    static void calculo(int numero) {
+        for (int ia = 1; ia <= numero; ia++) {
+            if (numero % ia == 0) {
+                System.out.println(ia);
+
+            }
+        }
+
+    }
+
+    private static void primos() {
+      long a, factor_primo,numero;
+        boolean p = false;
+
+        
+        System.out.println("Escriba su numero que desea averiguar");
+        numero = dato.nextLong();
+        factor_primo=Math.abs(numero);
+        a = factor_primo - 1;
+        p=calcular(a, factor_primo, p);
+        
+        if (p) {
+            System.out.println("No es primo");
+        } else {
+            System.out.println("Es primo");
+        }
+        
+    }
+    static boolean calcular(long a,long factor_primo,boolean p){
+            while (a > 1) {
+            if ((factor_primo % a) == 0) {
+                p = true;
+            }
+            a--;
+        }
+            return p;
+        }
+}
